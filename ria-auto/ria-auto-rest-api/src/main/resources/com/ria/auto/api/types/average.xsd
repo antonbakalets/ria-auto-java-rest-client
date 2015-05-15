@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xsd:element name="Criteria">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="categoryId" type="xsd:long" minOccurs="0"/>
+                <xsd:element name="bodyStyleId" type="xsd:long" minOccurs="0"/>
+                <xsd:element name="brandId" type="xsd:long" minOccurs="0"/>
+                <xsd:element name="modelId" type="xsd:long" minOccurs="0"/>
+                <xsd:element name="years" type="xsd:long" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="gearBoxId" type="xsd:long" minOccurs="0"/>
+                <xsd:element name="fuelTypeId" type="xsd:long" minOccurs="0"/>
+                <xsd:element name="powertrainId" type="xsd:long" minOccurs="0"/>
+                <!--<xsd:element name="engineVolume" type="xsd:long" minOccurs="0"/> type? -->
+                <xsd:element name="optionIds" type="xsd:long" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="mileage" type="xsd:long" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="doorsNumber" type="xsd:long" minOccurs="0"/>
+                <xsd:element name="regionId" type="xsd:long" minOccurs="0"/>
+                <xsd:element name="cityId" type="xsd:long" minOccurs="0"/>
+                <xsd:element name="carrying" type="xsd:long" minOccurs="0"/>
+                <xsd:element name="seatsNumber" type="xsd:long" minOccurs="0"/>
+                <xsd:element name="colourId" type="xsd:long" minOccurs="0"/>
+                <xsd:element name="custom" type="xsd:boolean" minOccurs="0"/>
+                <xsd:element name="damaged" type="xsd:boolean" minOccurs="0"/>
+                <xsd:element name="credit" type="xsd:boolean" minOccurs="0"/>
+                <xsd:element name="confiscated" type="xsd:boolean" minOccurs="0"/>
+                <xsd:element name="notOnTrack" type="xsd:boolean" minOccurs="0"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="AverageResult">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="total" type="xsd:long" minOccurs="0"/>
+                <xsd:element name="arithmeticMean" type="xsd:decimal" minOccurs="0"/>
+                <xsd:element name="interQuartileMean" type="xsd:decimal" minOccurs="0"/>
+                <xsd:element name="percentiles" type="Percentile" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="prices" type="xsd:decimal" minOccurs="0" maxOccurs="unbounded"/>
+                <xsd:element name="classifieds" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="Percentile">
+        <xsd:sequence>
+            <xsd:element name="percent" type="xsd:decimal" />
+            <xsd:element name="observation" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>
