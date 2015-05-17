@@ -13,4 +13,14 @@
         <module>ria-auto-rest-api</module>
         <module>ria-auto-rest-spring</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.10</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
